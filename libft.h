@@ -10,5 +10,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
 void	*ft_memset(void *b, int c, size_t len);
 void ft_bzero(void *s, size_t n);
+char	**ft_split(char const *s, char c);
 #endif
 
