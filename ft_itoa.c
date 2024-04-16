@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:36:09 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 17:05:13 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/16 18:25:35 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,26 @@ static int	ft_get_length(long long num)
 		length++;
 	}
 	return (length);
+}
+
+static void	rev_str(char *s, int n)
+{
+	int		i;
+	int		j;
+	char	tmp;
+
+	i = 0;
+	if (n < 0)
+		i++;
+	j = ft_strlen(s) - 1;
+	while (s[i] && i <= j)
+	{
+		tmp = s[i];
+		s[i] = s[j];
+		s[j] = tmp;
+		i++;
+		j--;
+	}
 }
 
 char	*ft_itoa(int n)
@@ -53,5 +73,6 @@ char	*ft_itoa(int n)
 		i++;
 	}
 	result[i] = 0;
+	rev_str(result, n);
 	return (result);
 }
