@@ -6,13 +6,13 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:09:12 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 18:09:13 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/16 18:51:41 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	const char	*s;
 
