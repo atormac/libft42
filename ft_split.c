@@ -6,13 +6,13 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/15 19:37:35 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/16 17:57:57 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	count;
 
@@ -28,6 +28,7 @@ size_t ft_count_words(char const *s, char c)
 	}
 	return (count);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
