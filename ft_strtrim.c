@@ -6,16 +6,16 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:50:40 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 16:35:29 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:36:33 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t s1_len;
+	size_t		s1_len;
 	char		*substr;
 	const char	*start;
 	const char	*end;

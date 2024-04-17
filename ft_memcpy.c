@@ -6,19 +6,19 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:09:14 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/15 19:20:31 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:47:43 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	register unsigned char *p1;
-	register unsigned char *p2;
+	register unsigned char	*p1;
+	register unsigned char	*p2;
 
 	p1 = (unsigned char *)dst;
-	p2 = (unsigned char*)src;
+	p2 = (unsigned char *)src;
 	while (n--)
 		*p1++ = *p2++;
 	return (dst);

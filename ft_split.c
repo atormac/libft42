@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 18:56:07 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:54:46 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,27 @@ static size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_array_init(char const *s, char c)
 {
 	char	**arr;
 	size_t	word_count;
+
+	word_count = ft_count_words(s, c);
+	if (word_count == 0)
+		return (NULL);
+	arr = malloc(sizeof(char *) * (word_count + 1));
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char		**arr;
 	const char	*word_start;
-	int		i;
+	int			i;
 
 	i = 0;
-	word_count = ft_count_words(s, c);
-	arr = malloc(sizeof(char*) * (word_count + 1));
-	if (!arr)
-		return (NULL);
-	while (*s)
+	arr = ft_array_init(s, c);
+	while (arr && *s)
 	{
 		word_start = NULL;
 		while (*s && *s == c)
@@ -51,7 +59,7 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			s++;
 		if (!word_start)
-			break;
+			break ;
 		arr[i] = malloc((s - word_start) + 1);
 		if (!arr[i])
 			return (NULL);

@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:34:18 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/15 17:48:46 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:35:20 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_atoi(const char *str)
 {
 	int			res;
 	const char	*s;
-
 
 	res = 0;
 	s = str;
@@ -31,4 +30,3 @@ int	ft_atoi(const char *str)
 		res *= -1;
 	return (res);
 }
-

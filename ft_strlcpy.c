@@ -6,21 +6,24 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:06:02 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 18:06:03 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:27:30 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	int	n;
 	int	src_len;
 
 	n = dstsize;
 	src_len = ft_strlen(src);
-	while (n-- > 1 && *src)
+	while (n > 1 && *src)
+	{
 		*dst++ = *src++;
+		n--;
+	}
 	if (dstsize != 0)
 		*dst = 0;
 	return (src_len);

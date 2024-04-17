@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:08:54 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 18:08:57 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:36:53 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	while (*s && *s != c)
 		s++;
 	if (*s == c)
-		return ((char*)s);
+		return ((char *)s);
 	return (NULL);
 }

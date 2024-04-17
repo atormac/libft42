@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:36:09 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/16 18:25:35 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 18:49:09 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (n < 0)
 	{
-		result[i] = '-';
-		i++;
+		result[i++] = '-';
 		num *= -1;
 	}
 	while (i < length)
