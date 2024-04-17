@@ -6,20 +6,20 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:16 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/17 18:32:53 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/17 19:09:16 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	if (!needle)
-		return (haystack);
+		return ((char *)haystack);
 	while (i <= len && haystack[i])
 	{
 		j = 0;
