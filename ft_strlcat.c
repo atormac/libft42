@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:14:24 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/17 18:25:09 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 13:23:29 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst += dst_len;
 	if (dstsize > 0)
 	{
-		while (*src && i < dstsize - dst_len - 1)
+		while ((dst_len + i) < (dstsize - 1) && *src)
 		{
 			*dst++ = *src++;
 			i++;

@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:50:40 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/17 18:36:33 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 12:48:22 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1_len--;
 	}
 	end++;
-	if (end <= start)
+	if (end - start < 0)
 		return (NULL);
 	substr = malloc(end - start + 1);
 	if (!substr)
