@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:34:18 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 14:47:05 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 14:53:59 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(const char *str)
 	while (is_whitespace(*s))
 		s++;
 	str = s;
-	if (*s && *s == '-')
+	if (*s == '-' || *s == '+')
 		s++;
 	while (*s && *s >= '0' && *s <= '9')
 	{
