@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:16 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 11:57:07 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 13:48:53 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		while (haystack[i + j] && haystack[i + j] == needle[j])
 		{
 			j++;
-			if (i + j < len)
-				break ;
+			if (i + j > len)
+				return (NULL);
 		}
 		if (needle[j] == 0)
 			return ((char *)haystack + i);

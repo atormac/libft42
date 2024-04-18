@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/17 18:54:46 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 13:27:59 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	arr = ft_array_init(s, c);
-	while (arr && *s)
+	if (!arr)
+		return (NULL);
+	while (*s)
 	{
 		word_start = NULL;
 		while (*s && *s == c)
