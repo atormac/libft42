@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:50:29 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 13:54:54 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 14:23:04 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	size;
+	size_t	size;
+	char	ch;
 
+	ch = c;
 	size = ft_strlen(s);
-	while (size >= 0 && s[size] != c)
+	while (size >= 0 && s[size] != ch)
 		size--;
-	if (s[size] == c)
+	if (s[size] == ch)
 		return ((char *)(s + size));
 	return (NULL);
 }
