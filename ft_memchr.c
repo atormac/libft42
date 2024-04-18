@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:11:22 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 13:56:48 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 17:24:47 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 	unsigned char	f;
 
-	str = (unsigned char*)s;
+	str = (unsigned char *)s;
 	f = (unsigned char)c;
 	while (n > 0)
 	{

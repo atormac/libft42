@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:34:18 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 14:53:59 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 17:26:13 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 static int	is_whitespace(char c)
 {
-	if (c == '\t' || c == ' ' || c == '\n' || c == '\v' ||
-			c == '\f' || c == '\r')
+	if (c == '\t' || c == ' ' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r')
 		return (1);
 	return (0);
 }
+
 int	ft_atoi(const char *str)
 {
 	int			res;

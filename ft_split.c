@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 16:31:10 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 17:33:17 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,12 @@ static char	**ft_array_init(char const *s, char c)
 	return (arr);
 }
 
-char	**ft_split(char const *s, char c)
+static void	do_split(char **arr, char const *s, char c)
 {
-	char		**arr;
 	const char	*word_start;
 	int			i;
 
 	i = 0;
-	arr = ft_array_init(s, c);
-	if (!arr)
-		return (arr);
 	while (*s)
 	{
 		word_start = NULL;
@@ -65,10 +61,20 @@ char	**ft_split(char const *s, char c)
 			break ;
 		arr[i] = malloc((s - word_start) + 1);
 		if (!arr[i])
-			return (NULL);
+			return ;
 		ft_strlcpy(arr[i], word_start, (s - word_start) + 1);
 		i++;
 	}
 	arr[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char		**arr;
+
+	arr = ft_array_init(s, c);
+	if (!arr)
+		return (arr);
+	do_split(arr, s, c);
 	return (arr);
 }
