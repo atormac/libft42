@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 13:27:59 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 16:31:10 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ static char	**ft_array_init(char const *s, char c)
 	size_t	word_count;
 
 	word_count = ft_count_words(s, c);
-	if (word_count == 0)
-		return (NULL);
 	arr = malloc(sizeof(char *) * (word_count + 1));
+	if (!arr)
+		return (NULL);
+	arr[0] = NULL;
 	return (arr);
 }
 
@@ -50,7 +51,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	arr = ft_array_init(s, c);
 	if (!arr)
-		return (NULL);
+		return (arr);
 	while (*s)
 	{
 		word_start = NULL;

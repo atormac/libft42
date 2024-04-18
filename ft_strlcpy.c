@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:06:02 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/17 18:27:30 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 15:43:24 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	n;
-	int	src_len;
+	size_t	n;
+	size_t	src_len;
 
 	n = dstsize;
 	src_len = ft_strlen(src);
