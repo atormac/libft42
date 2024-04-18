@@ -6,12 +6,19 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:34:18 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 14:18:53 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 14:47:05 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	is_whitespace(char c)
+{
+	if (c == '\t' || c == ' ' || c == '\n' || c == '\v' ||
+			c == '\f' || c == '\r')
+		return (1);
+	return (0);
+}
 int	ft_atoi(const char *str)
 {
 	int			res;
@@ -19,7 +26,7 @@ int	ft_atoi(const char *str)
 
 	res = 0;
 	s = str;
-	while (*s && *s == ' ')
+	while (is_whitespace(*s))
 		s++;
 	str = s;
 	if (*s && *s == '-')
