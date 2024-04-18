@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:14:24 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 13:23:29 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 15:14:23 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (dst_len >= dstsize)
+		return (dst_len + dstsize);
 	dst += dst_len;
 	if (dstsize > 0)
 	{

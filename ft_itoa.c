@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:36:09 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/17 18:49:09 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 15:38:38 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static int	ft_get_length(long long num)
 
 	length = 1;
 	if (num < 0)
+	{
 		length++;
+		num *= -1;
+	}
 	while (num >= 10)
 	{
 		num /= 10;

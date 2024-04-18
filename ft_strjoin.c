@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:41:48 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/15 18:48:11 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/18 15:07:01 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	size_t	size;
 
-	if (!s1 || !s2)
-		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(size + 1);
 	if (!str)
