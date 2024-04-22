@@ -6,11 +6,12 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:34:18 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 17:26:13 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/22 16:47:29 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 static int	is_whitespace(char c)
 {
@@ -34,6 +35,12 @@ int	ft_atoi(const char *str)
 		s++;
 	while (*s && *s >= '0' && *s <= '9')
 	{
+		if ((unsigned long)res > (SIZE_MAX / 10))
+		{
+			if (*str == '-')
+				return (0);
+			return (-1);
+		}
 		res = res * 10 + (*s - '0');
 		s++;
 	}
