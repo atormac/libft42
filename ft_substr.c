@@ -30,6 +30,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str = malloc(sub_len + 1);
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s + start, sub_len + 1);
+	if (sub_len > 0)
+		ft_strlcpy(str, s + start, sub_len + 1);
+	else
+		str[sub_len] = 0;
 	return (str);
 }
