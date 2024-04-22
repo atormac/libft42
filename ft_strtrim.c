@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -26,7 +25,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = s1 + s1_len - 1;
 	while (*start && ft_strchr(set, *start))
 		start++;
-	while (s1_len >= 0 && ft_strchr(set, *end))
+	while (s1_len > 0 && ft_strchr(set, *end))
 	{
 		end--;
 		s1_len--;
