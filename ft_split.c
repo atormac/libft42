@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/18 17:33:17 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/23 15:48:57 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,18 @@ static char	**ft_array_init(char const *s, char c)
 	return (arr);
 }
 
-static void	do_split(char **arr, char const *s, char c)
+static char	**free_array(char **arr, int i)
+{
+	while (i >= 0)
+	{
+		free(arr[i]);
+		i--;
+	}
+	free(arr);
+	return (NULL);
+}
+
+static char	**do_split(char **arr, char const *s, char c)
 {
 	const char	*word_start;
 	int			i;
@@ -61,11 +72,12 @@ static void	do_split(char **arr, char const *s, char c)
 			break ;
 		arr[i] = malloc((s - word_start) + 1);
 		if (!arr[i])
-			return ;
+			return (free_array(arr, i));
 		ft_strlcpy(arr[i], word_start, (s - word_start) + 1);
 		i++;
 	}
 	arr[i] = NULL;
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -75,6 +87,7 @@ char	**ft_split(char const *s, char c)
 	arr = ft_array_init(s, c);
 	if (!arr)
 		return (arr);
-	do_split(arr, s, c);
+	if (!do_split(arr, s, c))
+		return (NULL);
 	return (arr);
 }
