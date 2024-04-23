@@ -6,7 +6,7 @@
 #    By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 14:16:39 by atorma            #+#    #+#              #
-#    Updated: 2024/04/18 14:16:41 by atorma           ###   ########.fr        #
+#    Updated: 2024/04/23 19:15:23 by atorma           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,11 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
-bonus: $(OBJECTS) $(B_OBJECTS)
+.bonus: $(OBJECTS) $(B_OBJECTS)
 	ar rcs $(NAME) $(OBJECTS) $(B_OBJECTS)
+	touch .bonus
+
+bonus: .bonus
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?
@@ -48,6 +51,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f .bonus
 
 re: fclean all
 
