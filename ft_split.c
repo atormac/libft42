@@ -6,7 +6,7 @@
 /*   By: atorma <atorma@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:59:39 by atorma            #+#    #+#             */
-/*   Updated: 2024/04/23 15:48:57 by atorma           ###   ########.fr       */
+/*   Updated: 2024/04/23 15:52:27 by atorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static char	**do_split(char **arr, char const *s, char c)
 			break ;
 		arr[i] = malloc((s - word_start) + 1);
 		if (!arr[i])
-			return (free_array(arr, i));
+			return (free_array(arr, i - 1));
 		ft_strlcpy(arr[i], word_start, (s - word_start) + 1);
 		i++;
 	}
